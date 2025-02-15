@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 전체 화면 높이를 사용 */
+}
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+}
+
+/* 메뉴 컨테이너 */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button {
+  font-size: 24px;
+}
+
+.navbar {
+  display: none; /* 기본적으로 숨기기 */
+  position: absolute;
+  background-color: #4caf50;
+  width: 100%;
+  top: 50px;
+  left: 0;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar.show {
+  display: block; /* 메뉴 클릭시 */
+  animation: slideDown 0.3 ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin: 50px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+  .menu-container {
+    flex-direction: column;
+  }
+}
